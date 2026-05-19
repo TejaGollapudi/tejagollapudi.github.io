@@ -522,6 +522,75 @@
         .oss-dataset-name { font-size: 0.85rem; font-weight: 600; color: var(--text); }
         .oss-dataset-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
 
+        /* ─── PUB ABSTRACT ─── */
+        .pub-abstract {
+            font-size: 0.82rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-top: 0.65rem;
+        }
+
+        /* ─── WRITING CARDS ─── */
+        .writing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.75rem;
+        }
+        .writing-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            transition: all 0.2s;
+        }
+        .writing-card:hover {
+            background: var(--surface2);
+            border-color: rgba(79,142,247,0.3);
+            transform: translateY(-2px);
+        }
+        .writing-pub {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent2);
+        }
+        .writing-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.4;
+        }
+        .writing-date { font-size: 0.75rem; color: var(--muted); }
+
+        /* ─── CONTRIBUTIONS ─── */
+        .contrib-unified-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+        }
+        .contrib-header {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.4rem;
+        }
+        .contrib-role { font-size: 0.875rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+        .contrib-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+        .contrib-bullets li { font-size: 0.875rem; color: var(--light); padding-left: 1.1rem; position: relative; line-height: 1.55; }
+        .contrib-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+        .contrib-bullets a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .contrib-bullets a:hover { text-decoration: underline; }
+        .contrib-inner-divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+        .contrib-desc { font-size: 0.875rem; color: var(--light); line-height: 1.75; margin-top: 0.65rem; }
+
         /* ─── FADE IN ─── */
         .fade-in {
             opacity: 0;
@@ -553,6 +622,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#oss">Open Source</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#contributions">Contributions</a></li>
         <li><a href="#press">Press</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -586,7 +656,7 @@
             </div>
             <div class="stat-divider"></div>
             <div class="stat">
-                <span class="stat-num">8+</span>
+                <span class="stat-num">14+</span>
                 <span class="stat-label">Press Features</span>
             </div>
             <div class="stat-divider"></div>
@@ -920,8 +990,10 @@
         <div class="section-label">Research</div>
         <h2 class="section-title">Publications</h2>
         <p class="section-desc">
-            Publications at top-tier AI venues.
-            <a href="https://scholar.google.com/citations?user=osiwg78AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+            4 peer-reviewed publications at ICML, EMNLP, and IEEE, plus
+            <a href="https://medium.com/@tgollapudi10" target="_blank" rel="noopener">technical articles</a> and
+            <a href="https://blogs.vmware.com/opensource/author/rick-battle/" target="_blank" rel="noopener">open-source research</a>.
+            View full profile on <a href="https://scholar.google.com/citations?user=osiwg78AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
         </p>
 
         <div class="pub-list fade-in">
@@ -933,6 +1005,7 @@
                 </div>
                 <div class="pub-authors">Zhepei Wei, Xiao Yang, Kai Sun, Jiaqi Wang, Rulin Shao, Sean Chen, Mohammad Kachuee, Teja Gollapudi, Tony Liao, Nicolas Scheffer, Rakesh Wanga, Anuj Kumar, Yu Meng, Wen-tau Yih, Xin Luna Dong</div>
                 <div class="pub-venue">📄 ICML 2026</div>
+                <p class="pub-abstract">Introduces a reinforcement learning framework that directly optimizes LLM truthfulness by reducing hallucinations by 28.9% and improving truthfulness by 21.1%, while enabling models to abstain when uncertain rather than generating false information.</p>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2509.25760" target="_blank" rel="noopener" class="pub-link">arXiv</a>
                     <a href="https://github.com/facebookresearch/TruthRL" target="_blank" rel="noopener" class="pub-link">Code</a>
@@ -946,6 +1019,7 @@
                 </div>
                 <div class="pub-authors">M. Kachuee, T. Gollapudi et al.</div>
                 <div class="pub-venue">📄 EMNLP 2025 (Industry Track)</div>
+                <p class="pub-abstract">Proposes an efficient fine-tuning framework that improves RAG factuality by 5.4% by training models to handle distractor passages and plan reasoning strategies, now deployed in production systems.</p>
                 <div class="pub-links">
                     <a href="https://aclanthology.org/2025.emnlp-industry.53/" target="_blank" rel="noopener" class="pub-link">Paper</a>
                     <a href="https://aclanthology.org/2025.emnlp-industry.53/" target="_blank" rel="noopener" class="pub-link">ACL Anthology</a>
@@ -959,6 +1033,7 @@
                 </div>
                 <div class="pub-authors">Rick Battle, Teja Gollapudi</div>
                 <div class="pub-venue">📄 arXiv 2024</div>
+                <p class="pub-abstract">Demonstrates that AI models automatically generate more effective prompts than human engineers through systematic optimization, discovering unexpected high-performing strategies (e.g., Star Trek roleplay) that boost mathematical reasoning in LLMs.</p>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2402.10949" target="_blank" rel="noopener" class="pub-link">arXiv</a>
                     <a href="https://arxiv.org/pdf/2402.10949" target="_blank" rel="noopener" class="pub-link">PDF</a>
@@ -972,11 +1047,76 @@
                 </div>
                 <div class="pub-authors">N. S. Gollapudi, Vanitha M.</div>
                 <div class="pub-venue">📄 ViTECoN 2019</div>
+                <p class="pub-abstract">Develops an efficient CNN-based face detection model achieving 72% mAP on challenging multi-scale, multi-angle, and occluded face scenarios, running at 60fps on consumer GPUs for real-time applications.</p>
                 <div class="pub-links">
                     <a href="https://doi.org/10.1109/ViTECoN.2019.8899616" target="_blank" rel="noopener" class="pub-link">IEEE</a>
                 </div>
             </div>
 
+        </div>
+
+        <div class="oss-subsection-title" style="margin-top: 2.5rem;">Technical Writing</div>
+        <div class="writing-grid fade-in">
+
+            <a href="https://medium.com/vmware-data-ml-blog/starter-llm-for-the-enterprise-instruction-tuning-openllama-7b-d05fc3bbaccc" target="_blank" rel="noopener" class="writing-card">
+                <span class="writing-pub">VMware Data &amp; ML Blog</span>
+                <span class="writing-title">Starter LLM for the Enterprise: Instruction Tuning OpenLLaMA 7B and 13B</span>
+                <span class="writing-date">Jun 2023</span>
+            </a>
+
+            <a href="https://medium.com/vmware-data-ml-blog/lora-finetunning-of-ul-2-and-t5-models-35a08863593d" target="_blank" rel="noopener" class="writing-card">
+                <span class="writing-pub">VMware Data &amp; ML Blog</span>
+                <span class="writing-title">Efficient Instruction Fine-tuning of Flan-UL2 (20B LLM) Using LoRA with Limited Compute</span>
+                <span class="writing-date">Apr 2023</span>
+            </a>
+
+            <a href="https://medium.com/vmware-data-ml-blog/enhancing-flan-ul2-with-alpaca-to-follow-free-form-instructions-50c87c27dbee" target="_blank" rel="noopener" class="writing-card">
+                <span class="writing-pub">VMware Data &amp; ML Blog</span>
+                <span class="writing-title">Enhancing Flan-UL2 with Alpaca to Follow Free-Form Instructions</span>
+                <span class="writing-date">Apr 2023</span>
+            </a>
+
+            <a href="https://medium.com/vmware-data-ml-blog/pretraining-a-custom-bert-model-6e37df97dfc4" target="_blank" rel="noopener" class="writing-card">
+                <span class="writing-pub">VMware Data &amp; ML Blog</span>
+                <span class="writing-title">Pretraining a Custom BERT Model</span>
+                <span class="writing-date">Jul 2022</span>
+            </a>
+
+            <a href="https://blogs.vmware.com/opensource/2023/07/26/open-source-is-the-future-of-llms/" target="_blank" rel="noopener" class="writing-card">
+                <span class="writing-pub">VMware Open Source Blog</span>
+                <span class="writing-title">Open Source is the Future of LLMs</span>
+                <span class="writing-date">Jul 2023</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── CONTRIBUTIONS ─── -->
+<section id="contributions">
+    <div class="section-wrap">
+        <div class="section-label">Service</div>
+        <h2 class="section-title">Speaking &amp; Contributions</h2>
+        <p class="section-desc">
+            Peer review and program committee service at international AI conferences.
+        </p>
+
+        <div class="contrib-unified-card fade-in">
+            <div class="contrib-header">Program Committee &amp; Peer Review</div>
+
+            <div class="contrib-role">Program Committee Member</div>
+            <ul class="contrib-bullets">
+                <li><a href="https://ifipaiai.org/2026/committees/" target="_blank" rel="noopener">AIAI 2026</a> — 22nd International Conference on AI Applications &amp; Innovations</li>
+                <li><a href="https://eannconf.org/2026/committees/" target="_blank" rel="noopener">EANN 2026</a> — 27th Engineering Applications of Neural Networks Conference</li>
+                <li>Additional conferences in AI safety, machine learning, and NLP</li>
+            </ul>
+
+            <div class="contrib-inner-divider"></div>
+
+            <div class="contrib-role">Peer Review Service</div>
+            <p class="contrib-desc">Reviewed 10+ manuscripts across top-tier venues, evaluating research on AI safety, hallucination reduction, and machine learning systems.</p>
         </div>
     </div>
 </section>
@@ -989,7 +1129,7 @@
         <div class="section-label">Press &amp; Media</div>
         <h2 class="section-title">Coverage &amp; Recognition</h2>
         <p class="section-desc">
-            Coverage of my research and expert perspectives in leading technology publications.
+            Coverage of my research and expert perspectives in leading technology publications, and more.
         </p>
 
         <div class="press-grid fade-in">
@@ -1040,6 +1180,42 @@
                 <div class="press-outlet">Government Technology <span class="press-date">2024</span></div>
                 <div class="press-headline">Can AI-Written Prompts Yield More Accurate Math Answers?</div>
                 <div class="press-excerpt">GovTech explores the educational implications of research showing AI-generated prompts significantly improve mathematical reasoning in language models.</div>
+            </a>
+
+            <a href="https://www.reworked.co/digital-workplace/prompt-engineers-are-unnecessary-long-live-the-prompt-engineer/" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">Reworked <span class="press-date">Mar 2024</span></div>
+                <div class="press-headline">Prompt Engineers Are Unnecessary. Long Live the Prompt Engineer</div>
+                <div class="press-excerpt">VMware research shows LLMs generate more effective prompts than humans — yet experts argue the role will evolve rather than disappear, integrating across job functions.</div>
+            </a>
+
+            <a href="https://synergaize.com/index.php/2024/04/20/ai-optimized-prompts-are-highly-effective-and-seriously-weird-new-study/" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">Synergaize <span class="press-date">Apr 2024</span></div>
+                <div class="press-headline">AI Optimized Prompts are Highly Effective and SERIOUSLY Weird</div>
+                <div class="press-excerpt">Coverage of research finding that AI-generated prompts dramatically outperform human-crafted ones, with bizarre creative narratives like Star Trek references boosting math reasoning.</div>
+            </a>
+
+            <a href="https://cacm.acm.org/news/automating-tools-for-prompt-engineering/" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">Communications of the ACM <span class="press-date">2024</span></div>
+                <div class="press-headline">Automating Tools for Prompt Engineering</div>
+                <div class="press-excerpt">ACM — the world's largest computing society — covers research demonstrating that automated prompt optimization surpasses human prompt engineers across major LLM benchmarks.</div>
+            </a>
+
+            <a href="https://www.localogy.com/2024/05/the-death-of-the-prompt-engineer/" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">Localogy <span class="press-date">May 2024</span></div>
+                <div class="press-headline">The Death of the Prompt Engineer</div>
+                <div class="press-excerpt">Industry analysis citing VMware research as evidence that specialized prompt engineering skills are becoming obsolete as AI models learn to self-optimize instructions.</div>
+            </a>
+
+            <a href="https://developers.slashdot.org/story/24/03/07/1511252/ai-prompt-engineering-is-dead" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">Slashdot <span class="press-date">Mar 2024</span></div>
+                <div class="press-headline">AI Prompt Engineering Is Dead</div>
+                <div class="press-excerpt">Slashdot covers research showing AI language models autonomously devise superior prompts: "In almost every case, this automatically generated prompt did better than the best prompt found through trial-and-error."</div>
+            </a>
+
+            <a href="https://gigazine.net/gsc_news/en/20240308-ai-take-over-prompt-engineering/" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">GIGAZINE <span class="press-date">Mar 2024</span></div>
+                <div class="press-headline">'Prompt engineers' who operate AI are being eliminated by AI</div>
+                <div class="press-excerpt">Japanese tech outlet GIGAZINE covers how automated prompt optimization reduces engineering time from days to hours while improving output quality, putting the profession at risk.</div>
             </a>
 
         </div>
