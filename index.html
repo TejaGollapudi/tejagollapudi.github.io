@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teja Gollapudi — AI Research Engineer</title>
-    <meta name="description" content="Teja Gollapudi is a Senior Research Engineer specializing in large language models and post-training techniques, advancing AI at national scale.">
-    <meta property="og:title" content="Teja Gollapudi — AI Research Engineer">
-    <meta property="og:description" content="Senior Research Engineer advancing large language models and post-training. Publications at top AI venues.">
+    <title>Teja Gollapudi · AI Research Engineer</title>
+    <meta name="description" content="Teja Gollapudi is a Senior Research Engineer at Meta working on post-training foundational LLMs and agentic AI via reinforcement learning.">
+    <meta property="og:title" content="Teja Gollapudi · Senior Research Engineer, Meta">
+    <meta property="og:description" content="Senior Research Engineer at Meta advancing post-training and agentic capabilities in large language models. Publications at ICML, EMNLP, and more.">
     <meta property="og:url" content="https://tejagollapudi.com">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -451,6 +451,77 @@
             border-top: 1px solid var(--border);
         }
 
+        /* ─── OSS ─── */
+        .oss-total-bar {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: linear-gradient(135deg, rgba(79,142,247,0.08), rgba(167,139,250,0.08));
+            border: 1px solid rgba(79,142,247,0.18);
+            border-radius: 14px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .oss-total-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.04em;
+            line-height: 1;
+        }
+        .oss-total-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.07em; text-transform: uppercase; margin-top: 0.3rem; }
+        .oss-total-bar .divider-v { width: 1px; height: 40px; background: var(--border); }
+        .oss-total-desc { color: var(--light); font-size: 0.9rem; line-height: 1.6; max-width: 480px; }
+
+        .oss-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .oss-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.1rem 1.25rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+        .oss-card:hover {
+            background: var(--surface2);
+            border-color: rgba(79,142,247,0.3);
+            transform: translateY(-2px);
+        }
+        .oss-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+        .oss-name { font-size: 0.82rem; font-weight: 600; color: var(--text); line-height: 1.35; word-break: break-word; }
+        .oss-params { font-size: 0.72rem; font-weight: 600; color: var(--accent2); white-space: nowrap; padding: 0.15rem 0.5rem; background: rgba(167,139,250,0.1); border-radius: 4px; border: 1px solid rgba(167,139,250,0.2); flex-shrink: 0; }
+        .oss-meta { display: flex; align-items: center; justify-content: space-between; }
+        .oss-task { font-size: 0.72rem; color: var(--muted); }
+        .oss-dl { font-size: 0.78rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 0.3rem; }
+        .oss-dl-loading { color: var(--muted); font-weight: 400; }
+
+        .oss-subsection-title { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light); margin-bottom: 0.75rem; margin-top: 0.5rem; }
+        .oss-dataset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.75rem; }
+        .oss-dataset-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.1rem 1.25rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            transition: all 0.2s;
+        }
+        .oss-dataset-card:hover { background: var(--surface2); border-color: rgba(167,139,250,0.3); transform: translateY(-2px); }
+        .oss-dataset-name { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+        .oss-dataset-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+
         /* ─── FADE IN ─── */
         .fade-in {
             opacity: 0;
@@ -477,9 +548,10 @@
 
 <!-- ─── NAV ─── -->
 <nav id="navbar">
-    <a href="#" class="nav-logo">teja<span>.</span></a>
+    <a href="#" class="nav-logo"><span>&lt;</span>tg<span> /&gt;</span></a>
     <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#oss">Open Source</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#press">Press</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -493,39 +565,38 @@
     <div class="orb orb-3"></div>
 
     <div class="hero-content">
-        <div class="hero-badge">Senior Research Engineer · LLMs</div>
+        <div class="hero-badge">Senior Research Engineer </div>
 
         <h1>Teja Gollapudi</h1>
 
         <p class="hero-title">
-            Building the frontier of <strong>Large Language Models</strong> &amp; Post-Training
+            Post-Training &amp; Agentic <strong>Large Language Models</strong> at Meta
         </p>
 
         <p class="hero-desc">
-            Advancing state-of-the-art AI through novel post-training techniques —
-            instruction tuning, preference optimization, and scalable alignment methods
-            that shape how hundreds of millions of people interact with AI.
+            Building the next generation of LLMs through reinforcement learning and post-training,
+            inducing agentic reasoning, tool-use, and factuality in foundational models
+            deployed to hundreds of millions of people worldwide.
         </p>
 
         <div class="hero-stats">
-            <!-- TODO: Replace [N] with your real numbers -->
             <div class="stat">
-                <span class="stat-num">[N]+</span>
+                <span class="stat-num">4</span>
                 <span class="stat-label">Publications</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat">
-                <span class="stat-num">[N]+</span>
-                <span class="stat-label">Citations</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-                <span class="stat-num">[N]+</span>
+                <span class="stat-num">8+</span>
                 <span class="stat-label">Press Features</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat">
-                <span class="stat-num">[N]+</span>
+                <span class="stat-num" id="hero-oss-total">...</span>
+                <span class="stat-label">Model Downloads</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">7+</span>
                 <span class="stat-label">Years in AI</span>
             </div>
         </div>
@@ -547,61 +618,296 @@
 
         <div class="about-grid fade-in">
             <div class="about-text">
-                <!-- TODO: Fill in company name, degree, institution, and customize bio -->
-                <p>
-                    I am a Senior Research Engineer at [Company] specializing in large language models
-                    and post-training techniques. My work focuses on developing novel methods that improve
-                    the capabilities, reliability, and alignment of production-scale language models.
-                </p>
-                <p>
-                    My research spans instruction tuning, reinforcement learning from human feedback (RLHF),
-                    preference optimization, and scalable evaluation frameworks. The techniques I have developed
-                    are integrated into production LLM systems used by hundreds of millions of people worldwide —
-                    making direct impact on how AI assists in education, scientific discovery, medicine, and
-                    everyday productivity.
-                </p>
-                <p>
-                    I received my [Degree] from [Institution] in machine learning and natural language processing.
-                    My work has been published at top-tier venues including NeurIPS, ICML, ACL, and ICLR, and
-                    recognized by leading technology publications covering the AI industry.
-                </p>
-                <p>
-                    My contributions advance the United States' position at the frontier of artificial intelligence —
-                    a domain recognized as critical to national competitiveness, scientific progress, and economic
-                    growth.
-                </p>
+<p>
+    I am a Senior Research Engineer at Meta, where I explore post-training research
+    on foundational language models. My work focuses on inducing and enhancing
+    agentic capabilities in LLMs through reinforcement learning — advancing how
+    AI systems reason, plan, and act across multi-turn, multi-tool, and
+    multi-modal environments.
+</p>
+<p>
+    Beyond research, I have shipped production AI features for Wearables at scale.
+    I contributed to the launch of Ray-Ban Meta smart glasses, Ray-Ban Meta
+    Displays, and Oakley sport glasses — delivering real-time sports experiences
+    across major sporting events and bringing Meta's Fitness AI features to
+    millions of users worldwide.
+</p>
+<p>
+    Prior to Meta, at VMware I co-led the development of commercially viable
+    open-source instruction-following LLMs, now downloaded tens of thousands
+    of times monthly on Hugging Face. I also architected the LLM API
+    infrastructure that serves over 2,000 daily requests across 40+ internal
+    teams.
+</p>
+<p>
+    I hold an M.S. in Computer Science from the University of Illinois at
+    Chicago. My research has been published at ICML, EMNLP, and IEEE, and
+    featured in IEEE Spectrum, The Register, and Business Insider.
+    I am committed to pushing the frontier of AI.
+</p>
 
                 <div class="tag-list">
-                    <span class="tag">Large Language Models</span>
-                    <span class="tag">Post-Training</span>
-                    <span class="tag">RLHF</span>
-                    <span class="tag">Instruction Tuning</span>
-                    <span class="tag">Preference Optimization</span>
-                    <span class="tag">AI Alignment</span>
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">LLMs</span>
+                    <span class="tag">VLMs</span>
                     <span class="tag">NLP</span>
-                    <span class="tag">Scalable AI</span>
+                    <span class="tag">Reinforcement Learning</span>
+                    <span class="tag">AI</span>
                 </div>
             </div>
 
             <div>
                 <div class="about-card">
-                    <!-- TODO: Replace this div with <img src="photo.jpg" alt="Teja Gollapudi" style="width:100%;display:block;"> -->
-                    <div class="photo-placeholder">
-                        <div class="icon">◎</div>
-                        <span>Add headshot<br><small style="color:var(--muted)">Replace with &lt;img&gt; tag</small></span>
-                    </div>
+                    <!-- <img src="photo.jpg" alt="Teja Gollapudi" style="width:100%;display:block;"> -->
                     <div class="about-card-body">
                         <div class="name">Teja Gollapudi</div>
-                        <div class="role">Senior Research Engineer, LLMs</div>
+                        <div class="role">Senior Research Engineer, Meta</div>
                         <div class="social-links">
-                            <!-- TODO: Replace [YOUR-LINKEDIN] and [YOUR-SCHOLAR-ID] -->
-                            <a href="https://linkedin.com/in/[YOUR-LINKEDIN]" target="_blank" rel="noopener" class="social-link" title="LinkedIn">in</a>
-                            <a href="https://github.com/tejagollapudi" target="_blank" rel="noopener" class="social-link" title="GitHub">gh</a>
-                            <a href="https://scholar.google.com/citations?user=[YOUR-SCHOLAR-ID]" target="_blank" rel="noopener" class="social-link" title="Google Scholar">gs</a>
+                            <a href="https://www.linkedin.com/in/teja-gollapudi/" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </a>
+                            <a href="https://github.com/TejaGollapudi" target="_blank" rel="noopener" class="social-link" title="GitHub">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=osiwg78AAAAJ&hl=en" target="_blank" rel="noopener" class="social-link" title="Google Scholar">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
+                            </a>
+                            <a href="https://medium.com/@tgollapudi10" target="_blank" rel="noopener" class="social-link" title="Medium">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── OSS ─── -->
+<section id="oss">
+    <div class="section-wrap">
+        <div class="section-label">Open Source</div>
+        <h2 class="section-title">Models &amp; Datasets</h2>
+        <p class="section-desc">
+            Co-established <a href="https://huggingface.co/VMware" target="_blank" rel="noopener">VMware's Hugging Face organization</a>,
+            driving open-source AI adoption with instruction-tuned LLMs and NLP models.
+            Download counts update live from the Hugging Face API.
+        </p>
+
+        <div class="oss-total-bar fade-in">
+            <div>
+                <div class="oss-total-num" id="oss-total">...</div>
+                <div class="oss-total-label">Cumulative Downloads</div>
+            </div>
+            <div class="divider-v"></div>
+            <div class="oss-total-desc">
+                Across 15 open-source models and 2 datasets published under the VMware organization,
+                downloaded by researchers, engineers, and enterprises worldwide.
+            </div>
+        </div>
+
+        <div class="oss-subsection-title">Models</div>
+        <div class="oss-grid fade-in">
+
+            <a href="https://huggingface.co/VMware/open-llama-7b-open-instruct" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">open-llama-7b-open-instruct</span>
+                    <span class="oss-params">7B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Text Generation</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-open-llama-7b-open-instruct" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/open-llama-0.7T-7B-open-instruct-v1.1" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">open-llama-0.7T-7B-open-instruct-v1.1</span>
+                    <span class="oss-params">7B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Text Generation</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-open-llama-0.7T-7B-open-instruct-v1.1" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/open-llama-7b-v2-open-instruct" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">open-llama-7b-v2-open-instruct</span>
+                    <span class="oss-params">7B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Text Generation</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-open-llama-7b-v2-open-instruct" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/open-llama-13b-open-instruct" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">open-llama-13b-open-instruct</span>
+                    <span class="oss-params">13B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Text Generation</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-open-llama-13b-open-instruct" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/flan-ul2-alpaca-lora" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">flan-ul2-alpaca-lora</span>
+                    <span class="oss-params">20B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Text Generation</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-flan-ul2-alpaca-lora" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/xgen-7b-8k-open-instruct" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">xgen-7b-8k-open-instruct</span>
+                    <span class="oss-params">7B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Text Generation</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-xgen-7b-8k-open-instruct" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/flan-t5-xl-alpaca" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">flan-t5-xl-alpaca</span>
+                    <span class="oss-params">3B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Text Generation</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-flan-t5-xl-alpaca" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/flan-t5-large-alpaca" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">flan-t5-large-alpaca</span>
+                    <span class="oss-params">0.8B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Text Generation</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-flan-t5-large-alpaca" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/open-llama-0.3T-7B-instruct-dolly-hhrlhf" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">open-llama-0.3T-7B-instruct-dolly-hhrlhf</span>
+                    <span class="oss-params">7B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Text Generation</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-open-llama-0.3T-7B-instruct-dolly-hhrlhf" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/open-llama-0.3T-7B-open-instruct-v1.1" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">open-llama-0.3T-7B-open-instruct-v1.1</span>
+                    <span class="oss-params">7B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Text Generation</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-open-llama-0.3T-7B-open-instruct-v1.1" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/vbert-2021-large" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">vbert-2021-large</span>
+                    <span class="oss-params">0.3B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Fill-Mask</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-vbert-2021-large" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/vbert-2021-base" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">vbert-2021-base</span>
+                    <span class="oss-params">0.1B</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Fill-Mask</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-vbert-2021-base" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/minilmv2-l6-h768-from-roberta-large-mrqa" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">minilmv2-l6-h768-from-roberta-large-mrqa</span>
+                    <span class="oss-params">81M</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Question Answering</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-minilmv2-l6-h768-from-roberta-large-mrqa" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/minilmv2-l6-h384-from-bert-large-mrqa" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">minilmv2-l6-h384-from-bert-large-mrqa</span>
+                    <span class="oss-params">22M</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Question Answering</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-minilmv2-l6-h384-from-bert-large-mrqa" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/minilmv2-l12-h384-from-roberta-large-mrqa" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">minilmv2-l12-h384-from-roberta-large-mrqa</span>
+                    <span class="oss-params">40M</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Question Answering</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-minilmv2-l12-h384-from-roberta-large-mrqa" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+            <a href="https://huggingface.co/VMware/vinilm-2021-from-large" target="_blank" rel="noopener" class="oss-card">
+                <div class="oss-card-top">
+                    <span class="oss-name">vinilm-2021-from-large</span>
+                    <span class="oss-params">67M</span>
+                </div>
+                <div class="oss-meta">
+                    <span class="oss-task">Feature Extraction</span>
+                    <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-vinilm-2021-from-large" class="oss-dl-loading">…</span></span>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="oss-subsection-title">Datasets</div>
+        <div class="oss-dataset-grid fade-in">
+
+            <a href="https://huggingface.co/datasets/VMware/open-instruct" target="_blank" rel="noopener" class="oss-dataset-card">
+                <div>
+                    <div class="oss-dataset-name">open-instruct</div>
+                    <div class="oss-dataset-sub">Instruction-following training data</div>
+                </div>
+                <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-open-instruct" class="oss-dl-loading">…</span></span>
+            </a>
+
+            <a href="https://huggingface.co/datasets/VMware/open-instruct-v1-oasst-dolly-hhrlhf" target="_blank" rel="noopener" class="oss-dataset-card">
+                <div>
+                    <div class="oss-dataset-name">open-instruct-v1-oasst-dolly-hhrlhf</div>
+                    <div class="oss-dataset-sub">OASST · Dolly · HH-RLHF combined</div>
+                </div>
+                <span class="oss-dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span id="dl-VMware-open-instruct-v1-oasst-dolly-hhrlhf" class="oss-dl-loading">…</span></span>
+            </a>
+
         </div>
     </div>
 </section>
@@ -614,66 +920,63 @@
         <div class="section-label">Research</div>
         <h2 class="section-title">Publications</h2>
         <p class="section-desc">
-            Selected publications at top-tier AI venues. Full list on
-            <a href="https://scholar.google.com/citations?user=[YOUR-SCHOLAR-ID]" target="_blank" rel="noopener">Google Scholar</a>.
+            Publications at top-tier AI venues.
+            <a href="https://scholar.google.com/citations?user=osiwg78AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
         </p>
 
         <div class="pub-list fade-in">
-            <!-- TODO: Replace each block with your real papers -->
 
             <div class="pub-card">
                 <div class="pub-header">
-                    <span class="pub-title">[Paper Title 1 — e.g., Scaling Post-Training via Direct Preference Optimization]</span>
+                    <span class="pub-title">TruthRL: Incentivizing Truthful LLMs via Reinforcement Learning</span>
+                    <span class="pub-year">2026</span>
+                </div>
+                <div class="pub-authors">Zhepei Wei, Xiao Yang, Kai Sun, Jiaqi Wang, Rulin Shao, Sean Chen, Mohammad Kachuee, Teja Gollapudi, Tony Liao, Nicolas Scheffer, Rakesh Wanga, Anuj Kumar, Yu Meng, Wen-tau Yih, Xin Luna Dong</div>
+                <div class="pub-venue">📄 ICML 2026</div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2509.25760" target="_blank" rel="noopener" class="pub-link">arXiv</a>
+                    <a href="https://github.com/facebookresearch/TruthRL" target="_blank" rel="noopener" class="pub-link">Code</a>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-header">
+                    <span class="pub-title">PrismRAG: Boosting RAG Factuality with Distractor Resilience and Strategized Reasoning</span>
+                    <span class="pub-year">2025</span>
+                </div>
+                <div class="pub-authors">M. Kachuee, T. Gollapudi et al.</div>
+                <div class="pub-venue">📄 EMNLP 2025 (Industry Track)</div>
+                <div class="pub-links">
+                    <a href="https://aclanthology.org/2025.emnlp-industry.53/" target="_blank" rel="noopener" class="pub-link">Paper</a>
+                    <a href="https://aclanthology.org/2025.emnlp-industry.53/" target="_blank" rel="noopener" class="pub-link">ACL Anthology</a>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-header">
+                    <span class="pub-title">The Unreasonable Effectiveness of Eccentric Automatic Prompts</span>
                     <span class="pub-year">2024</span>
                 </div>
-                <div class="pub-authors">Teja Gollapudi, [Co-author A], [Co-author B]</div>
-                <div class="pub-venue">📄 NeurIPS 2024</div>
+                <div class="pub-authors">Rick Battle, Teja Gollapudi</div>
+                <div class="pub-venue">📄 arXiv 2024</div>
                 <div class="pub-links">
-                    <a href="#" class="pub-link">Paper</a>
-                    <a href="#" class="pub-link">arXiv</a>
-                    <a href="#" class="pub-link">Code</a>
+                    <a href="https://arxiv.org/abs/2402.10949" target="_blank" rel="noopener" class="pub-link">arXiv</a>
+                    <a href="https://arxiv.org/pdf/2402.10949" target="_blank" rel="noopener" class="pub-link">PDF</a>
                 </div>
             </div>
 
             <div class="pub-card">
                 <div class="pub-header">
-                    <span class="pub-title">[Paper Title 2]</span>
-                    <span class="pub-year">2024</span>
+                    <span class="pub-title">Fast Multi-scale Face Detection CNN</span>
+                    <span class="pub-year">2019</span>
                 </div>
-                <div class="pub-authors">Teja Gollapudi, [Co-authors]</div>
-                <div class="pub-venue">📄 ICML 2024</div>
+                <div class="pub-authors">N. S. Gollapudi, Vanitha M.</div>
+                <div class="pub-venue">📄 ViTECoN 2019</div>
                 <div class="pub-links">
-                    <a href="#" class="pub-link">Paper</a>
-                    <a href="#" class="pub-link">arXiv</a>
+                    <a href="https://doi.org/10.1109/ViTECoN.2019.8899616" target="_blank" rel="noopener" class="pub-link">IEEE</a>
                 </div>
             </div>
 
-            <div class="pub-card">
-                <div class="pub-header">
-                    <span class="pub-title">[Paper Title 3]</span>
-                    <span class="pub-year">2023</span>
-                </div>
-                <div class="pub-authors">Teja Gollapudi, [Co-authors]</div>
-                <div class="pub-venue">📄 ACL 2023</div>
-                <div class="pub-links">
-                    <a href="#" class="pub-link">Paper</a>
-                    <a href="#" class="pub-link">arXiv</a>
-                    <a href="#" class="pub-link">Poster</a>
-                </div>
-            </div>
-
-            <div class="pub-card">
-                <div class="pub-header">
-                    <span class="pub-title">[Paper Title 4]</span>
-                    <span class="pub-year">2023</span>
-                </div>
-                <div class="pub-authors">Teja Gollapudi, [Co-authors]</div>
-                <div class="pub-venue">📄 ICLR 2023</div>
-                <div class="pub-links">
-                    <a href="#" class="pub-link">Paper</a>
-                    <a href="#" class="pub-link">arXiv</a>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -690,43 +993,55 @@
         </p>
 
         <div class="press-grid fade-in">
-            <!-- TODO: Replace with your real press coverage -->
 
-            <a href="#" class="press-card" target="_blank" rel="noopener">
-                <div class="press-outlet">
-                    [Publication 1]
-                    <span class="press-date">2024</span>
-                </div>
-                <div class="press-headline">[Headline of the article covering your work]</div>
-                <div class="press-excerpt">Brief description of what the article covers and why it's significant.</div>
+            <a href="https://spectrum.ieee.org/prompt-engineering-is-dead" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">IEEE Spectrum <span class="press-date">May 2024</span></div>
+                <div class="press-headline">AI Prompt Engineering Is Dead</div>
+                <div class="press-excerpt">Research by Battle &amp; Gollapudi at VMware showing AI models outperform human prompt engineers, featured in the May 2024 print issue of IEEE Spectrum.</div>
             </a>
 
-            <a href="#" class="press-card" target="_blank" rel="noopener">
-                <div class="press-outlet">
-                    [Publication 2]
-                    <span class="press-date">2024</span>
-                </div>
-                <div class="press-headline">[Headline 2]</div>
-                <div class="press-excerpt">Brief description of coverage.</div>
+            <a href="https://www.businessinsider.com/chaptgpt-large-language-model-ai-prompt-engineering-automated-optimizer-2024-3" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">Business Insider <span class="press-date">Mar 2024</span></div>
+                <div class="press-headline">ChatGPT and Other AI Models Can Write Better Prompts Than Humans Can</div>
+                <div class="press-excerpt">Business Insider covers VMware research showing automated prompt optimizers consistently beat human-crafted prompts across large language models.</div>
             </a>
 
-            <a href="#" class="press-card" target="_blank" rel="noopener">
-                <div class="press-outlet">
-                    [Publication 3]
-                    <span class="press-date">2023</span>
-                </div>
-                <div class="press-headline">[Headline 3]</div>
-                <div class="press-excerpt">Brief description of coverage.</div>
+            <a href="https://www.newscientist.com/article/2419531-ais-get-better-at-maths-if-you-tell-them-to-pretend-to-be-in-star-trek/" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">New Scientist <span class="press-date">Feb 2024</span></div>
+                <div class="press-headline">AIs Get Better at Maths If You Tell Them to Pretend to Be in Star Trek</div>
+                <div class="press-excerpt">New Scientist covers how eccentric AI-generated prompts dramatically improve LLM mathematical reasoning, including surprising sci-fi roleplay findings.</div>
             </a>
 
-            <a href="#" class="press-card" target="_blank" rel="noopener">
-                <div class="press-outlet">
-                    [Publication 4]
-                    <span class="press-date">2023</span>
-                </div>
-                <div class="press-headline">[Headline 4]</div>
-                <div class="press-excerpt">Brief description of coverage.</div>
+            <a href="https://www.theregister.com/2024/02/22/prompt_engineering_ai_models/" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">The Register <span class="press-date">Feb 2024</span></div>
+                <div class="press-headline">Prompt Engineering Is a Task Best Left to AI Models</div>
+                <div class="press-excerpt">Coverage of research demonstrating that automatic prompt optimization consistently outperforms human-crafted prompts across Mistral and Llama 2 models.</div>
             </a>
+
+            <a href="https://www.computerworld.com/article/1612492/ais-may-be-better-at-prompt-optimization-than-humans.html" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">Computerworld <span class="press-date">Mar 2024</span></div>
+                <div class="press-headline">AIs May Be Better at Prompt Optimization Than Humans</div>
+                <div class="press-excerpt">Computerworld highlights VMware research showing AI-generated prompts outperform human engineers in optimizing LLM performance on benchmark tasks.</div>
+            </a>
+
+            <a href="https://www.businessinsider.com/using-star-trek-prompts-boost-ai-chatbot-basic-math-performance-2024-2" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">Business Insider <span class="press-date">Feb 2024</span></div>
+                <div class="press-headline">Using Star Trek Prompts Can Boost an AI Chatbot's Basic Math Performance</div>
+                <div class="press-excerpt">Second Business Insider feature on eccentric AI-generated prompts dramatically improving LLM reasoning, including a viral Star Trek-themed example.</div>
+            </a>
+
+            <a href="https://www.itpro.com/technology/artificial-intelligence/this-engineering-discipline-was-hailed-as-the-next-big-thing-but-ai-has-killed-it-before-it-even-started" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">ITPro <span class="press-date">Mar 2024</span></div>
+                <div class="press-headline">This Engineering Discipline Was Hailed as the Next Big Thing, but AI Has Killed It Before It Even Started</div>
+                <div class="press-excerpt">ITPro covers how VMware research upends the prompt engineering profession: AI models now optimize their own instructions better than human specialists.</div>
+            </a>
+
+            <a href="https://www.govtech.com/education/k-12/can-ai-written-prompts-yield-more-accurate-math-answers" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">Government Technology <span class="press-date">2024</span></div>
+                <div class="press-headline">Can AI-Written Prompts Yield More Accurate Math Answers?</div>
+                <div class="press-excerpt">GovTech explores the educational implications of research showing AI-generated prompts significantly improve mathematical reasoning in language models.</div>
+            </a>
+
         </div>
     </div>
 </section>
@@ -744,24 +1059,23 @@
         </p>
 
         <div class="contact-links fade-in">
-            <!-- TODO: Replace [YOUR-EMAIL] and [YOUR-LINKEDIN] -->
-            <a href="mailto:[YOUR-EMAIL]" class="contact-link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                Email
-            </a>
-            <a href="https://linkedin.com/in/[YOUR-LINKEDIN]" target="_blank" rel="noopener" class="contact-link">
+            <a href="https://www.linkedin.com/in/teja-gollapudi/" target="_blank" rel="noopener" class="contact-link">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
                 LinkedIn
             </a>
-            <a href="https://scholar.google.com/citations?user=[YOUR-SCHOLAR-ID]" target="_blank" rel="noopener" class="contact-link">
+            <a href="https://scholar.google.com/citations?user=osiwg78AAAAJ&hl=en" target="_blank" rel="noopener" class="contact-link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 0 1 .665 6.479A11.952 11.952 0 0 0 12 20.055a11.952 11.952 0 0 0-6.824-2.998 12.078 12.078 0 0 1 .665-6.479L12 14z"/></svg>
                 Google Scholar
             </a>
-            <a href="https://github.com/tejagollapudi" target="_blank" rel="noopener" class="contact-link">
+            <a href="https://github.com/TejaGollapudi" target="_blank" rel="noopener" class="contact-link">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
                 GitHub
             </a>
-            <a href="resume.pdf" class="btn btn-primary" download>
+            <a href="https://medium.com/@tgollapudi10" target="_blank" rel="noopener" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                Blog
+            </a>
+            <a href="Teja_Resume_May_2026.pdf" class="btn btn-primary" download>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:17px;height:17px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download CV
             </a>
@@ -771,7 +1085,7 @@
 
 <!-- ─── FOOTER ─── -->
 <footer>
-    <p>© 2025 Teja Gollapudi &nbsp;·&nbsp; tejagollapudi.com</p>
+    <p>© 2026 Teja Gollapudi &nbsp;·&nbsp; tejagollapudi.com</p>
 </footer>
 
 <script>
@@ -780,6 +1094,81 @@
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── HuggingFace live download counts ──
+    const HF_MODELS = [
+        'VMware/open-llama-7b-open-instruct',
+        'VMware/open-llama-0.7T-7B-open-instruct-v1.1',
+        'VMware/open-llama-7b-v2-open-instruct',
+        'VMware/open-llama-13b-open-instruct',
+        'VMware/flan-ul2-alpaca-lora',
+        'VMware/xgen-7b-8k-open-instruct',
+        'VMware/flan-t5-xl-alpaca',
+        'VMware/flan-t5-large-alpaca',
+        'VMware/open-llama-0.3T-7B-instruct-dolly-hhrlhf',
+        'VMware/open-llama-0.3T-7B-open-instruct-v1.1',
+        'VMware/vbert-2021-large',
+        'VMware/vbert-2021-base',
+        'VMware/minilmv2-l6-h768-from-roberta-large-mrqa',
+        'VMware/minilmv2-l6-h384-from-bert-large-mrqa',
+        'VMware/minilmv2-l12-h384-from-roberta-large-mrqa',
+        'VMware/vinilm-2021-from-large',
+    ];
+    const HF_DATASETS = [
+        'VMware/open-instruct',
+        'VMware/open-instruct-v1-oasst-dolly-hhrlhf',
+    ];
+
+    function fmtDL(n) {
+        if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+        if (n >= 1e3) return (n / 1e3).toFixed(1) + 'k';
+        return n.toString();
+    }
+
+    function setDL(id, n) {
+        const el = document.getElementById('dl-' + id.replace('/', '-'));
+        if (!el) return;
+        el.textContent = fmtDL(n);
+        el.classList.remove('oss-dl-loading');
+    }
+
+    async function loadHFDownloads() {
+        try {
+            const fetchModel = id =>
+                fetch(`https://huggingface.co/api/models/${id}?expand[]=downloadsAllTime`)
+                    .then(r => r.json())
+                    .then(d => ({ id, n: d.downloadsAllTime ?? d.downloads ?? 0 }))
+                    .catch(() => ({ id, n: 0 }));
+
+            const fetchDataset = id =>
+                fetch(`https://huggingface.co/api/datasets/${id}?expand[]=downloadsAllTime`)
+                    .then(r => r.json())
+                    .then(d => ({ id, n: d.downloadsAllTime ?? d.downloads ?? 0 }))
+                    .catch(() => ({ id, n: 0 }));
+
+            const results = await Promise.all([
+                ...HF_MODELS.map(fetchModel),
+                ...HF_DATASETS.map(fetchDataset),
+            ]);
+
+            let total = 0;
+            results.forEach(({ id, n }) => {
+                total += n;
+                setDL(id, n);
+            });
+
+            const totalEl = document.getElementById('oss-total');
+            if (totalEl) totalEl.textContent = fmtDL(total);
+            const heroEl = document.getElementById('hero-oss-total');
+            if (heroEl) heroEl.textContent = fmtDL(total);
+
+        } catch (e) {
+            console.warn('HuggingFace API unavailable', e);
+            document.querySelectorAll('.oss-dl-loading').forEach(el => el.textContent = '–');
+        }
+    }
+
+    loadHFDownloads();
 
     // Nav opacity on scroll
     const nav = document.getElementById('navbar');
