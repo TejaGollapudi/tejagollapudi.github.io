@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teja Gollapudi — AI Research Engineer</title>
+    <meta name="description" content="Teja Gollapudi is a Senior Research Engineer specializing in large language models and post-training techniques, advancing AI at national scale.">
+    <meta property="og:title" content="Teja Gollapudi — AI Research Engineer">
+    <meta property="og:description" content="Senior Research Engineer advancing large language models and post-training. Publications at top AI venues.">
+    <meta property="og:url" content="https://tejagollapudi.com">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:         #06090f;
+            --bg2:        #0c1020;
+            --surface:    rgba(255,255,255,0.04);
+            --surface2:   rgba(255,255,255,0.07);
+            --border:     rgba(255,255,255,0.08);
+            --accent:     #4f8ef7;
+            --accent2:    #a78bfa;
+            --green:      #34d399;
+            --text:       #e2e8f0;
+            --light:      #94a3b8;
+            --muted:      #475569;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(6,9,15,0.85);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s;
+        }
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* ─── HERO ─── */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 7rem 2rem 5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+        }
+        .orb-1 { width: 560px; height: 560px; background: rgba(79,142,247,0.11); top: -120px; left: -120px; }
+        .orb-2 { width: 420px; height: 420px; background: rgba(167,139,250,0.09); bottom: -60px; right: -60px; }
+        .orb-3 { width: 300px; height: 300px; background: rgba(52,211,153,0.05); top: 55%; left: 55%; transform: translate(-50%,-50%); }
+
+        .hero-content { max-width: 820px; position: relative; z-index: 1; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(79,142,247,0.1);
+            border: 1px solid rgba(79,142,247,0.28);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.75rem;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+        .hero-badge::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+        @keyframes blink {
+            0%,100% { opacity: 1; }
+            50%      { opacity: 0.25; }
+        }
+
+        h1 {
+            font-size: clamp(2.6rem, 6vw, 4.75rem);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -0.035em;
+            margin-bottom: 1rem;
+            background: linear-gradient(140deg, #e2e8f0 30%, #64748b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-title {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--light);
+            font-weight: 400;
+            margin-bottom: 1.25rem;
+        }
+        .hero-title strong { color: var(--accent); font-weight: 600; }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--muted);
+            max-width: 580px;
+            margin: 0 auto 2.75rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2.75rem;
+            flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat-num {
+            display: block;
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.04em;
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .stat-divider { width: 1px; height: 40px; background: var(--border); }
+
+        .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ─── BUTTONS ─── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 0 24px rgba(79,142,247,0.35);
+        }
+        .btn-primary:hover {
+            background: #6ba3fa;
+            box-shadow: 0 0 36px rgba(79,142,247,0.52);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: var(--surface2);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.14);
+            transform: translateY(-1px);
+        }
+
+        /* ─── SECTION WRAPPER ─── */
+        .section-wrap {
+            padding: 5rem 2rem;
+            max-width: 1020px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.65rem;
+        }
+        .section-title {
+            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.85rem;
+        }
+        .section-desc {
+            color: var(--light);
+            max-width: 620px;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+        .section-desc a { color: var(--accent); text-decoration: none; }
+        .section-desc a:hover { text-decoration: underline; }
+
+        /* ─── DIVIDER ─── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 0 2rem;
+        }
+
+        /* ─── ABOUT ─── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: start;
+        }
+        .about-text p {
+            color: var(--light);
+            line-height: 1.85;
+            margin-bottom: 1.2rem;
+        }
+        .about-text p:last-child { margin-bottom: 0; }
+
+        .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
+        .tag {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--light);
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 0.3rem 0.8rem;
+            border-radius: 100px;
+        }
+
+        .about-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            position: sticky;
+            top: 5.5rem;
+        }
+        .photo-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(79,142,247,0.12), rgba(167,139,250,0.12));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            color: var(--muted);
+            font-size: 0.78rem;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .photo-placeholder .icon { font-size: 2.75rem; opacity: 0.35; }
+        /* If you add a real photo, replace .photo-placeholder with an <img> tag */
+
+        .about-card-body { padding: 1.25rem; }
+        .about-card-body .name { font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; }
+        .about-card-body .role { color: var(--muted); font-size: 0.82rem; }
+
+        .social-links { display: flex; gap: 0.6rem; margin-top: 1rem; }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px; height: 34px;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        .social-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+        /* ─── PUBLICATIONS ─── */
+        .pub-list { display: flex; flex-direction: column; gap: 0.875rem; }
+        .pub-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+        .pub-card:hover {
+            background: var(--surface2);
+            border-color: rgba(79,142,247,0.3);
+            transform: translateX(4px);
+        }
+        .pub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.45rem;
+        }
+        .pub-title { font-weight: 600; font-size: 0.975rem; line-height: 1.45; color: var(--text); }
+        .pub-year {
+            font-size: 0.78rem;
+            color: var(--muted);
+            white-space: nowrap;
+            font-weight: 500;
+            padding: 0.2rem 0.55rem;
+            background: var(--surface2);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        .pub-authors { font-size: 0.83rem; color: var(--muted); margin-bottom: 0.45rem; }
+        .pub-venue {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.78rem;
+            color: var(--accent2);
+            font-weight: 600;
+        }
+        .pub-links { display: flex; gap: 0.5rem; margin-top: 0.85rem; flex-wrap: wrap; }
+        .pub-link {
+            font-size: 0.74rem;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 0.22rem 0.65rem;
+            background: rgba(79,142,247,0.08);
+            border: 1px solid rgba(79,142,247,0.2);
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+        .pub-link:hover { background: rgba(79,142,247,0.18); border-color: rgba(79,142,247,0.4); }
+
+        /* ─── PRESS ─── */
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+            gap: 1rem;
+        }
+        .press-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s;
+        }
+        .press-card:hover {
+            background: var(--surface2);
+            border-color: rgba(167,139,250,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+        }
+        .press-outlet {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--accent2);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .press-date { font-weight: 400; color: var(--muted); letter-spacing: 0; text-transform: none; font-size: 0.75rem; }
+        .press-headline { font-size: 0.93rem; font-weight: 600; color: var(--text); line-height: 1.5; margin-bottom: 0.5rem; }
+        .press-excerpt { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+
+        /* ─── CONTACT ─── */
+        #contact { text-align: center; }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.875rem;
+            flex-wrap: wrap;
+            margin-top: 2.25rem;
+        }
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.85rem 1.6rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .contact-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(79,142,247,0.07);
+            transform: translateY(-2px);
+        }
+        .contact-link svg { width: 17px; height: 17px; flex-shrink: 0; }
+
+        /* ─── FOOTER ─── */
+        footer {
+            text-align: center;
+            padding: 2.25rem;
+            color: var(--muted);
+            font-size: 0.78rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ─── FADE IN ─── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .about-card { position: static; max-width: 280px; margin: 0 auto; }
+            .stat-divider { display: none; }
+            nav { padding: 1rem 1.25rem; }
+            .nav-links { gap: 1.25rem; }
+        }
+        @media (max-width: 500px) {
+            .nav-links { display: none; }
+            .hero-ctas { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="navbar">
+    <a href="#" class="nav-logo">teja<span>.</span></a>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#press">Press</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-content">
+        <div class="hero-badge">Senior Research Engineer · LLMs</div>
+
+        <h1>Teja Gollapudi</h1>
+
+        <p class="hero-title">
+            Building the frontier of <strong>Large Language Models</strong> &amp; Post-Training
+        </p>
+
+        <p class="hero-desc">
+            Advancing state-of-the-art AI through novel post-training techniques —
+            instruction tuning, preference optimization, and scalable alignment methods
+            that shape how hundreds of millions of people interact with AI.
+        </p>
+
+        <div class="hero-stats">
+            <!-- TODO: Replace [N] with your real numbers -->
+            <div class="stat">
+                <span class="stat-num">[N]+</span>
+                <span class="stat-label">Publications</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">[N]+</span>
+                <span class="stat-label">Citations</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">[N]+</span>
+                <span class="stat-label">Press Features</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">[N]+</span>
+                <span class="stat-label">Years in AI</span>
+            </div>
+        </div>
+
+        <div class="hero-ctas">
+            <a href="#research" class="btn btn-primary">View Research</a>
+            <a href="resume.pdf" class="btn btn-secondary" download>Download CV</a>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+    <div class="section-wrap">
+        <div class="section-label">About</div>
+        <h2 class="section-title">Advancing AI at Scale</h2>
+
+        <div class="about-grid fade-in">
+            <div class="about-text">
+                <!-- TODO: Fill in company name, degree, institution, and customize bio -->
+                <p>
+                    I am a Senior Research Engineer at [Company] specializing in large language models
+                    and post-training techniques. My work focuses on developing novel methods that improve
+                    the capabilities, reliability, and alignment of production-scale language models.
+                </p>
+                <p>
+                    My research spans instruction tuning, reinforcement learning from human feedback (RLHF),
+                    preference optimization, and scalable evaluation frameworks. The techniques I have developed
+                    are integrated into production LLM systems used by hundreds of millions of people worldwide —
+                    making direct impact on how AI assists in education, scientific discovery, medicine, and
+                    everyday productivity.
+                </p>
+                <p>
+                    I received my [Degree] from [Institution] in machine learning and natural language processing.
+                    My work has been published at top-tier venues including NeurIPS, ICML, ACL, and ICLR, and
+                    recognized by leading technology publications covering the AI industry.
+                </p>
+                <p>
+                    My contributions advance the United States' position at the frontier of artificial intelligence —
+                    a domain recognized as critical to national competitiveness, scientific progress, and economic
+                    growth.
+                </p>
+
+                <div class="tag-list">
+                    <span class="tag">Large Language Models</span>
+                    <span class="tag">Post-Training</span>
+                    <span class="tag">RLHF</span>
+                    <span class="tag">Instruction Tuning</span>
+                    <span class="tag">Preference Optimization</span>
+                    <span class="tag">AI Alignment</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">Scalable AI</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="about-card">
+                    <!-- TODO: Replace this div with <img src="photo.jpg" alt="Teja Gollapudi" style="width:100%;display:block;"> -->
+                    <div class="photo-placeholder">
+                        <div class="icon">◎</div>
+                        <span>Add headshot<br><small style="color:var(--muted)">Replace with &lt;img&gt; tag</small></span>
+                    </div>
+                    <div class="about-card-body">
+                        <div class="name">Teja Gollapudi</div>
+                        <div class="role">Senior Research Engineer, LLMs</div>
+                        <div class="social-links">
+                            <!-- TODO: Replace [YOUR-LINKEDIN] and [YOUR-SCHOLAR-ID] -->
+                            <a href="https://linkedin.com/in/[YOUR-LINKEDIN]" target="_blank" rel="noopener" class="social-link" title="LinkedIn">in</a>
+                            <a href="https://github.com/tejagollapudi" target="_blank" rel="noopener" class="social-link" title="GitHub">gh</a>
+                            <a href="https://scholar.google.com/citations?user=[YOUR-SCHOLAR-ID]" target="_blank" rel="noopener" class="social-link" title="Google Scholar">gs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── RESEARCH ─── -->
+<section id="research">
+    <div class="section-wrap">
+        <div class="section-label">Research</div>
+        <h2 class="section-title">Publications</h2>
+        <p class="section-desc">
+            Selected publications at top-tier AI venues. Full list on
+            <a href="https://scholar.google.com/citations?user=[YOUR-SCHOLAR-ID]" target="_blank" rel="noopener">Google Scholar</a>.
+        </p>
+
+        <div class="pub-list fade-in">
+            <!-- TODO: Replace each block with your real papers -->
+
+            <div class="pub-card">
+                <div class="pub-header">
+                    <span class="pub-title">[Paper Title 1 — e.g., Scaling Post-Training via Direct Preference Optimization]</span>
+                    <span class="pub-year">2024</span>
+                </div>
+                <div class="pub-authors">Teja Gollapudi, [Co-author A], [Co-author B]</div>
+                <div class="pub-venue">📄 NeurIPS 2024</div>
+                <div class="pub-links">
+                    <a href="#" class="pub-link">Paper</a>
+                    <a href="#" class="pub-link">arXiv</a>
+                    <a href="#" class="pub-link">Code</a>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-header">
+                    <span class="pub-title">[Paper Title 2]</span>
+                    <span class="pub-year">2024</span>
+                </div>
+                <div class="pub-authors">Teja Gollapudi, [Co-authors]</div>
+                <div class="pub-venue">📄 ICML 2024</div>
+                <div class="pub-links">
+                    <a href="#" class="pub-link">Paper</a>
+                    <a href="#" class="pub-link">arXiv</a>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-header">
+                    <span class="pub-title">[Paper Title 3]</span>
+                    <span class="pub-year">2023</span>
+                </div>
+                <div class="pub-authors">Teja Gollapudi, [Co-authors]</div>
+                <div class="pub-venue">📄 ACL 2023</div>
+                <div class="pub-links">
+                    <a href="#" class="pub-link">Paper</a>
+                    <a href="#" class="pub-link">arXiv</a>
+                    <a href="#" class="pub-link">Poster</a>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-header">
+                    <span class="pub-title">[Paper Title 4]</span>
+                    <span class="pub-year">2023</span>
+                </div>
+                <div class="pub-authors">Teja Gollapudi, [Co-authors]</div>
+                <div class="pub-venue">📄 ICLR 2023</div>
+                <div class="pub-links">
+                    <a href="#" class="pub-link">Paper</a>
+                    <a href="#" class="pub-link">arXiv</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── PRESS ─── -->
+<section id="press">
+    <div class="section-wrap">
+        <div class="section-label">Press &amp; Media</div>
+        <h2 class="section-title">Coverage &amp; Recognition</h2>
+        <p class="section-desc">
+            Coverage of my research and expert perspectives in leading technology publications.
+        </p>
+
+        <div class="press-grid fade-in">
+            <!-- TODO: Replace with your real press coverage -->
+
+            <a href="#" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">
+                    [Publication 1]
+                    <span class="press-date">2024</span>
+                </div>
+                <div class="press-headline">[Headline of the article covering your work]</div>
+                <div class="press-excerpt">Brief description of what the article covers and why it's significant.</div>
+            </a>
+
+            <a href="#" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">
+                    [Publication 2]
+                    <span class="press-date">2024</span>
+                </div>
+                <div class="press-headline">[Headline 2]</div>
+                <div class="press-excerpt">Brief description of coverage.</div>
+            </a>
+
+            <a href="#" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">
+                    [Publication 3]
+                    <span class="press-date">2023</span>
+                </div>
+                <div class="press-headline">[Headline 3]</div>
+                <div class="press-excerpt">Brief description of coverage.</div>
+            </a>
+
+            <a href="#" class="press-card" target="_blank" rel="noopener">
+                <div class="press-outlet">
+                    [Publication 4]
+                    <span class="press-date">2023</span>
+                </div>
+                <div class="press-headline">[Headline 4]</div>
+                <div class="press-excerpt">Brief description of coverage.</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+    <div class="section-wrap">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-desc" style="margin: 0 auto;">
+            Open to research collaborations, speaking invitations, and expert consultations
+            in large language models and AI post-training.
+        </p>
+
+        <div class="contact-links fade-in">
+            <!-- TODO: Replace [YOUR-EMAIL] and [YOUR-LINKEDIN] -->
+            <a href="mailto:[YOUR-EMAIL]" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Email
+            </a>
+            <a href="https://linkedin.com/in/[YOUR-LINKEDIN]" target="_blank" rel="noopener" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://scholar.google.com/citations?user=[YOUR-SCHOLAR-ID]" target="_blank" rel="noopener" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 0 1 .665 6.479A11.952 11.952 0 0 0 12 20.055a11.952 11.952 0 0 0-6.824-2.998 12.078 12.078 0 0 1 .665-6.479L12 14z"/></svg>
+                Google Scholar
+            </a>
+            <a href="https://github.com/tejagollapudi" target="_blank" rel="noopener" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                GitHub
+            </a>
+            <a href="resume.pdf" class="btn btn-primary" download>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:17px;height:17px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download CV
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+    <p>© 2025 Teja Gollapudi &nbsp;·&nbsp; tejagollapudi.com</p>
+</footer>
+
+<script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav opacity on scroll
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        nav.style.background = window.scrollY > 60
+            ? 'rgba(6,9,15,0.97)'
+            : 'rgba(6,9,15,0.85)';
+    }, { passive: true });
+</script>
+</body>
+</html>
