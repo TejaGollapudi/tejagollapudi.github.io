@@ -17,17 +17,35 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --bg:         #06090f;
-            --bg2:        #0c1020;
+            --bg:         #0f1117;
+            --bg2:        #181c27;
             --surface:    rgba(255,255,255,0.04);
             --surface2:   rgba(255,255,255,0.07);
-            --border:     rgba(255,255,255,0.08);
-            --accent:     #4f8ef7;
-            --accent2:    #a78bfa;
-            --green:      #34d399;
-            --text:       #e2e8f0;
-            --light:      #94a3b8;
-            --muted:      #475569;
+            --border:     rgba(255,255,255,0.09);
+            --accent:     #c9a84c;
+            --accent2:    #e2c97e;
+            --green:      #52c07e;
+            --text:       #dde3ee;
+            --light:      #8fa0b8;
+            --muted:      #4e5f73;
+            --nav-bg:        rgba(15,17,23,0.82);
+            --nav-bg-scroll: rgba(15,17,23,0.97);
+        }
+
+        [data-theme="light"] {
+            --bg:         #fdf8ef;
+            --bg2:        #f5ede0;
+            --surface:    rgba(0,0,0,0.03);
+            --surface2:   rgba(0,0,0,0.06);
+            --border:     rgba(0,0,0,0.10);
+            --accent:     #9a6b1f;
+            --accent2:    #b5831e;
+            --green:      #2d7a4f;
+            --text:       #1c2333;
+            --light:      #4a5668;
+            --muted:      #8b9aac;
+            --nav-bg:        rgba(253,248,239,0.88);
+            --nav-bg-scroll: rgba(253,248,239,0.98);
         }
 
         html { scroll-behavior: smooth; }
@@ -51,7 +69,7 @@
             align-items: center;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            background: rgba(6,9,15,0.85);
+            background: var(--nav-bg);
             border-bottom: 1px solid var(--border);
             transition: background 0.3s;
         }
@@ -90,9 +108,9 @@
             filter: blur(90px);
             pointer-events: none;
         }
-        .orb-1 { width: 560px; height: 560px; background: rgba(79,142,247,0.11); top: -120px; left: -120px; }
-        .orb-2 { width: 420px; height: 420px; background: rgba(167,139,250,0.09); bottom: -60px; right: -60px; }
-        .orb-3 { width: 300px; height: 300px; background: rgba(52,211,153,0.05); top: 55%; left: 55%; transform: translate(-50%,-50%); }
+        .orb-1 { width: 560px; height: 560px; background: rgba(201,168,76,0.10); top: -120px; left: -120px; }
+        .orb-2 { width: 420px; height: 420px; background: rgba(226,201,126,0.07); bottom: -60px; right: -60px; }
+        .orb-3 { width: 300px; height: 300px; background: rgba(82,192,126,0.05); top: 55%; left: 55%; transform: translate(-50%,-50%); }
 
         .hero-content { max-width: 820px; position: relative; z-index: 1; }
 
@@ -129,7 +147,7 @@
             line-height: 1.08;
             letter-spacing: -0.035em;
             margin-bottom: 1rem;
-            background: linear-gradient(140deg, #e2e8f0 30%, #64748b 100%);
+            background: linear-gradient(140deg, var(--text) 30%, var(--muted) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -377,9 +395,8 @@
 
         /* ─── PRESS ─── */
         .press-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-            gap: 1rem;
+            columns: 3;
+            column-gap: 1rem;
         }
         .press-card {
             background: var(--surface);
@@ -389,6 +406,8 @@
             text-decoration: none;
             display: block;
             transition: all 0.2s;
+            break-inside: avoid;
+            margin-bottom: 1rem;
         }
         .press-card:hover {
             background: var(--surface2);
@@ -765,9 +784,60 @@
             .hamburger { display: flex; }
             .hero-ctas { flex-direction: column; align-items: center; }
         }
+
+        /* ─── SCROLL PROGRESS ─── */
+        #scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            height: 2px;
+            background: var(--accent);
+            z-index: 200;
+            width: 0%;
+            transition: width 0.08s linear;
+            pointer-events: none;
+        }
+
+        /* ─── ACTIVE NAV ─── */
+        .nav-links a.active { color: var(--accent); }
+
+        /* ─── THEME TOGGLE ─── */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--light);
+            border-radius: 8px;
+            width: 34px; height: 34px;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* ─── VENUE BADGES ─── */
+        .venue-badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.22rem 0.65rem;
+            border-radius: 100px;
+            letter-spacing: 0.04em;
+        }
+        .venue-icml  { background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
+        .venue-emnlp { background: rgba(79,142,247,0.12); color: #4f8ef7; border: 1px solid rgba(79,142,247,0.25); }
+        .venue-arxiv { background: rgba(245,158,11,0.12); color: #f59e0b; border: 1px solid rgba(245,158,11,0.25); }
+        .venue-ieee  { background: rgba(167,139,250,0.12); color: #a78bfa; border: 1px solid rgba(167,139,250,0.25); }
+
+        /* ─── MASONRY RESPONSIVE ─── */
+        @media (max-width: 900px) { .press-grid { columns: 2; } }
+        @media (max-width: 600px) { .press-grid { columns: 1; } }
     </style>
 </head>
 <body>
+
+<div id="scroll-progress"></div>
 
 <!-- ─── NAV ─── -->
 <nav id="navbar">
@@ -775,6 +845,7 @@
     <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
     </button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
     <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -1220,7 +1291,7 @@ and enterprises worldwide.
                     <span class="pub-year">2026</span>
                 </div>
                 <div class="pub-authors">Zhepei Wei, Xiao Yang, Kai Sun, Jiaqi Wang, Rulin Shao, Sean Chen, Mohammad Kachuee, Teja Gollapudi, Tony Liao, Nicolas Scheffer, Rakesh Wanga, Anuj Kumar, Yu Meng, Wen-tau Yih, Xin Luna Dong</div>
-                <div class="pub-venue">📄 ICML 2026</div>
+                <div class="pub-venue"><span class="venue-badge venue-icml">ICML 2026</span></div>
                 <p class="pub-abstract">Introduces a reinforcement learning framework that directly optimizes LLM truthfulness by reducing hallucinations by 28.9% and improving truthfulness by 21.1%, while enabling models to abstain when uncertain. Currently deployed in production at Meta Reality Labs, addressing critical AI safety priorities.</p>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2509.25760" target="_blank" rel="noopener" class="pub-link">arXiv</a>
@@ -1234,7 +1305,7 @@ and enterprises worldwide.
                     <span class="pub-year">2025</span>
                 </div>
                 <div class="pub-authors">M. Kachuee, T. Gollapudi et al.</div>
-                <div class="pub-venue">📄 EMNLP 2025 (Industry Track)</div>
+                <div class="pub-venue"><span class="venue-badge venue-emnlp">EMNLP 2025 · Industry Track</span></div>
                 <p class="pub-abstract">Proposes an efficient fine-tuning framework that improves RAG factuality by 5.4% by training models to handle distractor passages and plan reasoning strategies, now deployed in production systems.</p>
                 <div class="pub-links">
                     <a href="https://aclanthology.org/2025.emnlp-industry.53/" target="_blank" rel="noopener" class="pub-link">Paper</a>
@@ -1248,7 +1319,7 @@ and enterprises worldwide.
                     <span class="pub-year">2024</span>
                 </div>
                 <div class="pub-authors">Rick Battle, Teja Gollapudi</div>
-                <div class="pub-venue">📄 arXiv 2024</div>
+                <div class="pub-venue"><span class="venue-badge venue-arxiv">arXiv 2024</span></div>
                 <p class="pub-abstract">Demonstrates that AI models automatically generate more effective prompts than human engineers through systematic optimization, discovering unexpected high-performing strategies (e.g., Star Trek roleplay) that boost mathematical reasoning in LLMs. Featured in IEEE Spectrum, New Scientist, and 17+ major publications, reaching 500K+ engineering professionals.</p>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2402.10949" target="_blank" rel="noopener" class="pub-link">arXiv</a>
@@ -1262,7 +1333,7 @@ and enterprises worldwide.
                     <span class="pub-year">2019</span>
                 </div>
                 <div class="pub-authors">N. S. Gollapudi, Vanitha M.</div>
-                <div class="pub-venue">📄 ViTECoN 2019</div>
+                <div class="pub-venue"><span class="venue-badge venue-ieee">ViTECoN 2019 · IEEE</span></div>
                 <p class="pub-abstract">Develops an efficient CNN-based face detection model achieving 72% mAP on challenging multi-scale, multi-angle, and occluded face scenarios, running at 60fps on consumer GPUs for real-time applications.</p>
                 <div class="pub-links">
                     <a href="https://doi.org/10.1109/ViTECoN.2019.8899616" target="_blank" rel="noopener" class="pub-link">IEEE</a>
@@ -1588,13 +1659,54 @@ and enterprises worldwide.
         link.addEventListener('click', closeMobileNav);
     });
 
-    // Nav opacity on scroll
+    // Nav + scroll progress
     const nav = document.getElementById('navbar');
+    const progressBar = document.getElementById('scroll-progress');
     window.addEventListener('scroll', () => {
+        const s = getComputedStyle(document.documentElement);
         nav.style.background = window.scrollY > 60
-            ? 'rgba(6,9,15,0.97)'
-            : 'rgba(6,9,15,0.85)';
+            ? s.getPropertyValue('--nav-bg-scroll').trim()
+            : s.getPropertyValue('--nav-bg').trim();
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        if (progressBar && total > 0) progressBar.style.width = (window.scrollY / total * 100) + '%';
     }, { passive: true });
+
+    // Active nav via IntersectionObserver
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(a => {
+                    a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+                });
+            }
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(s => sectionObserver.observe(s));
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeToggle.textContent = '☀️';
+    }
+    themeToggle.addEventListener('click', () => {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        if (isLight) {
+            document.documentElement.removeAttribute('data-theme');
+            themeToggle.textContent = '🌙';
+            localStorage.setItem('theme', 'dark');
+            nav.style.background = '';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeToggle.textContent = '☀️';
+            localStorage.setItem('theme', 'light');
+            nav.style.background = '';
+        }
+    });
 </script>
 </body>
 </html>
