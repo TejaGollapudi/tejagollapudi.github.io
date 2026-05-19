@@ -413,6 +413,51 @@
 
         /* ─── CONTACT ─── */
         #contact { text-align: center; }
+        .contact-creds {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 1.75rem;
+        }
+        .contact-cred {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: rgba(79,142,247,0.07);
+            border: 1px solid rgba(79,142,247,0.2);
+            color: var(--light);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.4rem 0.9rem;
+            border-radius: 100px;
+        }
+        .contact-cred strong { color: var(--accent); font-weight: 600; }
+        .contact-avail {
+            font-size: 0.82rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            font-weight: 600;
+            margin-bottom: 0.65rem;
+        }
+        .contact-avail-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 2.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            max-width: 360px;
+        }
+        .contact-avail-list li {
+            font-size: 0.9rem;
+            color: var(--light);
+            padding-left: 1.1rem;
+            position: relative;
+            text-align: left;
+        }
+        .contact-avail-list li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
         .contact-links {
             display: flex;
             justify-content: center;
@@ -1005,7 +1050,7 @@
                 </div>
                 <div class="pub-authors">Zhepei Wei, Xiao Yang, Kai Sun, Jiaqi Wang, Rulin Shao, Sean Chen, Mohammad Kachuee, Teja Gollapudi, Tony Liao, Nicolas Scheffer, Rakesh Wanga, Anuj Kumar, Yu Meng, Wen-tau Yih, Xin Luna Dong</div>
                 <div class="pub-venue">📄 ICML 2026</div>
-                <p class="pub-abstract">Introduces a reinforcement learning framework that directly optimizes LLM truthfulness by reducing hallucinations by 28.9% and improving truthfulness by 21.1%, while enabling models to abstain when uncertain rather than generating false information.</p>
+                <p class="pub-abstract">Introduces a reinforcement learning framework that directly optimizes LLM truthfulness by reducing hallucinations by 28.9% and improving truthfulness by 21.1%, while enabling models to abstain when uncertain. Currently deployed in production at Meta Reality Labs, addressing critical AI safety priorities.</p>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2509.25760" target="_blank" rel="noopener" class="pub-link">arXiv</a>
                     <a href="https://github.com/facebookresearch/TruthRL" target="_blank" rel="noopener" class="pub-link">Code</a>
@@ -1033,7 +1078,7 @@
                 </div>
                 <div class="pub-authors">Rick Battle, Teja Gollapudi</div>
                 <div class="pub-venue">📄 arXiv 2024</div>
-                <p class="pub-abstract">Demonstrates that AI models automatically generate more effective prompts than human engineers through systematic optimization, discovering unexpected high-performing strategies (e.g., Star Trek roleplay) that boost mathematical reasoning in LLMs.</p>
+                <p class="pub-abstract">Demonstrates that AI models automatically generate more effective prompts than human engineers through systematic optimization, discovering unexpected high-performing strategies (e.g., Star Trek roleplay) that boost mathematical reasoning in LLMs. Featured in IEEE Spectrum, New Scientist, and 17+ major publications, reaching 500K+ engineering professionals.</p>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2402.10949" target="_blank" rel="noopener" class="pub-link">arXiv</a>
                     <a href="https://arxiv.org/pdf/2402.10949" target="_blank" rel="noopener" class="pub-link">PDF</a>
@@ -1229,12 +1274,23 @@
     <div class="section-wrap">
         <div class="section-label">Contact</div>
         <h2 class="section-title">Get in Touch</h2>
-        <p class="section-desc" style="margin: 0 auto;">
-            Open to research collaborations, speaking invitations, and expert consultations
-            in large language models and AI post-training.
-        </p>
+        <div class="contact-creds">
+            <span class="contact-cred"><strong>Program Committee Member</strong> — AIAI 2026, EANN 2026</span>
+            <span class="contact-cred"><strong>Expert Consultant</strong> — Post-training LLMs, AI safety, prompt optimization</span>
+        </div>
+
+        <p class="contact-avail">I'm available for</p>
+        <ul class="contact-avail-list">
+            <li>Research collaborations</li>
+            <li>Speaking invitations at conferences and workshops</li>
+            <li>Expert consulting on post-training methods</li>
+        </ul>
 
         <div class="contact-links fade-in">
+            <a href="mailto:teja@tejagollapudi.com" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Email
+            </a>
             <a href="https://www.linkedin.com/in/teja-gollapudi/" target="_blank" rel="noopener" class="contact-link">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
                 LinkedIn
@@ -1251,7 +1307,7 @@
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
                 Blog
             </a>
-            <a href="Teja_Resume_May_2026.pdf" class="btn btn-primary" download>
+            <a href="Teja_Resume_update.pdf" class="btn btn-primary" download>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:17px;height:17px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download CV
             </a>
